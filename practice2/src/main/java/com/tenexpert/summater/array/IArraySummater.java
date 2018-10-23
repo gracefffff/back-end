@@ -9,8 +9,7 @@ public interface IArraySummater {
      * @param array  - array type of int
      *
      * @throws ArraySummaterException exception
-     *
+     *  @return int - return value type of int
      */
     int sum(int[] array) throws ArraySummaterException;
-     
 }
