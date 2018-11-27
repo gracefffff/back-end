@@ -34,7 +34,7 @@ public final class Main {
                 fileContent = new byte[(int) fileRead.length()];
                 int successReading = readFileStream.read(fileContent);
                 if (successReading != (int) fileRead.length()) {
-                    System.out.println("File has not been red");
+                    System.out.println("File has not been read");
                 }
             }
             try (OutputStream writeFileStream = new FileOutputStream(filePath)) {

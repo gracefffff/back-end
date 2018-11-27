@@ -26,7 +26,6 @@ public class ExampleTest {
     }
 
     @Test
-
     public void testGetLongestLineCharsCountWorks() throws IOException {
         when(fileReader.readLine()).thenReturn("File.txt line 1: this is first string");
         when(fileReader.hasMoreLines()).thenReturn(true, false);
