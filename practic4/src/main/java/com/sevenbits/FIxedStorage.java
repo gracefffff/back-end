@@ -4,9 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-public class FIxedStorage implements IFixedStorage {
+public class FIxedStorage implements IFixedStorage{
     private final int MAX_SIZE = 16;
     private final static Logger logger = LoggerFactory.getLogger(UniqueStorage.class);
     private Map<String, Planet> hashmap;
@@ -43,7 +44,8 @@ public class FIxedStorage implements IFixedStorage {
     @Override
     public Planet get(String key) {
         if (!hashmap.containsKey(key)) {
-            logger.error("this key is not exist in FixedStorage"); }
+            logger.error("this key is not exist in FixedStorage");
+        }
         return hashmap.get(key);
     }
 
@@ -62,4 +64,6 @@ public class FIxedStorage implements IFixedStorage {
         }
         return items.toString();
     }
+
+
 }

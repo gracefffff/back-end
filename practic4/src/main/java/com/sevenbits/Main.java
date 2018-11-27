@@ -2,6 +2,7 @@ package com.sevenbits;
 
 public class Main {
     public static void main(final String[] args) {
+        boolean contain = false;
         UniqueStorage uniqueStorage = new UniqueStorage();
         FIxedStorage fIxedStorage = new FIxedStorage();
         Planet earth = new Planet("Earth");
@@ -27,6 +28,12 @@ public class Main {
         fIxedStorage.add(neptune.getId(), neptune);
         System.out.println("FixedStorage : " + fIxedStorage.toString());
         System.out.println(("UniqueStorage : " + uniqueStorage.toString()));
+        for( Object object: uniqueStorage) {
+            contain = fIxedStorage.contains((Planet)object);
+        }
+        if (contain) {
+            System.out.println("FixedStorage contains the same planets as UniqueStorage");
+        }
 
     }
 }

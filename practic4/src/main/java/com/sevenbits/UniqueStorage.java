@@ -4,9 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
-public class UniqueStorage implements IUniqueStorage {
+public class UniqueStorage implements IUniqueStorage, Iterable {
     private ArrayList<Planet> listPlanet;
     private final static Logger logger = LoggerFactory.getLogger(UniqueStorage.class);
 
@@ -52,7 +53,10 @@ public class UniqueStorage implements IUniqueStorage {
             planets.append(planet.getName()).append('\n');
         }
         return planets.toString();
-
     }
 
+    @Override
+    public Iterator iterator() {
+        return  listPlanet.listIterator();
+    }
 }
