@@ -10,12 +10,12 @@ public class ListOperator  {
 
     public <E extends Comparable<E>> E max(List<E> list, int firstIndex, int lastIndex) throws ListOperatorException {
         try {
-            List<E> partOfList = list.subList(firstIndex, lastIndex + 1);
+
 
             E maxValue = list.get(firstIndex);
-            for (E object : partOfList) {
-                if (object.compareTo(maxValue) >= 0) {
-                    maxValue = object;
+            for (int i = firstIndex+1; i <= lastIndex; i++) {
+                if (list.get(i).compareTo(maxValue) >= 0) {
+                    maxValue = list.get(i);
                 }
             }
 

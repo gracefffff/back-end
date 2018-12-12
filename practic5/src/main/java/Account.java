@@ -8,6 +8,11 @@ public class Account implements Comparable<Account> {
         id = UUID.randomUUID().toString();
         this.balance = balance;
     }
+    public void addToBalance(long value) throws Exception {
+        long balance = this.balance;
+        Thread.sleep(1);
+        this.balance = balance + value;
+    }
 
     @Override
     public String toString() {
